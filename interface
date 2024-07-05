@@ -1,21 +1,11 @@
+#Variáveis globais:
+tentativas = 0
+
 #Função para o cabeçario.
 def cabeçario():
     print('''             \033[32m|-------------------|
              |---JOGO DA FORCA---|
              |-------------------|\033[m''')
-    DEFINIR = int(input("""O'que você deseja?
-          Insira 1 para inciar um novo jogo;
-          Insira 2 para verificar record gerais;
-          Insira 3 para verificar record de um determinado jogador;
-          Insira 4 para encerrar o programa.
-                          """))
-    if DEFINIR == 1:
-
-    if DEFINIR == 2:
-
-    if DEFINIR == 3:
-
-    if DEFINIR == 4:
 
 #Função para perguntar a dificuldade.
 def dificuldade():
@@ -25,12 +15,18 @@ def dificuldade():
               Insira o número 3 para difícil:
                             '''))
     if dificuldade == 1:
-        print('''Você selecionou a dificuldade: Fácil. Você terá \033[0;32m6 tentativas\033[m. Boa sorte!''')
+        max_tentativas = 7
+        print('''Você selecionou a dificuldade: Fácil. Você terá \033[0;32m7 tentativas\033[m. Boa sorte!''')
     if dificuldade == 2:
-        print('''Você selecionou a dificuldade: Médio. Você terá \033[0;32m5 tentativas\033[m. Boa sorte!''')
+        max_tentativas = 6
+        print('''Você selecionou a dificuldade: Médio. Você terá \033[0;32m6 tentativas\033[m. Boa sorte!''')
     if dificuldade == 3:
-        print('''Você selecionou a dificuldade: Difícil. Você terá \033[0;32m4 tentativas\033[m. Boa sorte!''')
+        max_tentativas = 5
+        print('''Você selecionou a dificuldade: Difícil. Você terá \033[0;32m5 tentativas\033[m. Boa sorte!''')
+    else:
+        max_tentativas = 6
+        print("""Dificuldade invalida! A opção 'dificuldade média' foi selecionada por padrão.""")
 
 #Função para pedir o nick do jogador.
 def pedir_nick():
-    nome = str(input('Insira o seu nickname: '))
+    nick = input('Insira o seu nickname: ')
