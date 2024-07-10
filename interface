@@ -1,11 +1,17 @@
 #Variáveis globais:
 tentativas = 0
+max_tentativas = 0
+nick = []
 
-#Função para o cabeçario.
+#Função para pedir o nick do jogador.
+def pedir_nick():
+    nick = str(input('Insira o seu nickname: '))
+
+#Função para exibir o cabeçario.
 def cabeçario():
-    print('''             \033[32m|-------------------|
-             |---JOGO DA FORCA---|
-             |-------------------|\033[m''')
+    print('''             \033[1;36m|-----------------------|
+             |-----JOGO DA FORCA-----|
+             |-----------------------|\033[m''')
 
 #Função para perguntar a dificuldade.
 def dificuldade():
@@ -17,16 +23,31 @@ def dificuldade():
     if dificuldade == 1:
         max_tentativas = 7
         print('''Você selecionou a dificuldade: Fácil. Você terá \033[0;32m7 tentativas\033[m. Boa sorte!''')
-    if dificuldade == 2:
+    elif dificuldade == 2:
         max_tentativas = 6
         print('''Você selecionou a dificuldade: Médio. Você terá \033[0;32m6 tentativas\033[m. Boa sorte!''')
-    if dificuldade == 3:
+    elif dificuldade == 3:
         max_tentativas = 5
         print('''Você selecionou a dificuldade: Difícil. Você terá \033[0;32m5 tentativas\033[m. Boa sorte!''')
     else:
         max_tentativas = 6
         print("""Dificuldade invalida! A opção 'dificuldade média' foi selecionada por padrão.""")
 
-#Função para pedir o nick do jogador.
-def pedir_nick():
-    nick = input('Insira o seu nickname: ')
+#Função para exibir o placar.    
+def placar():
+    if dificuldade == 1:
+        print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(max_tentativas)+" \033[m    \033[1;36m|\033[m ")
+        print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
+        print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
+    elif dificuldade == 2: 
+        print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(max_tentativas)+" \033[m    \033[1;36m|\033[m ")
+        print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
+        print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
+    elif dificuldade == 3:
+        print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(max_tentativas)+" \033[m    \033[1;36m|\033[m ")
+        print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
+        print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
+    else:
+        print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(max_tentativas)+" \033[m    \033[1;36m|\033[m ")
+        print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
+        print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
