@@ -1,0 +1,60 @@
+import random
+from dados import *
+from Interface import *
+
+# Função para ler palavras do arquivo
+def ler_palavras():
+    with open('palavras ocultas.txt', 'r', encoding='utf-8') as file:
+        palavras = file.readlines()
+    return [palavra.strip().lower() for palavra in palavras]
+
+# Função para escolher uma palavra aleatoriamente
+def escolher_palavra(palavras):
+    return random.choice(palavras)
+
+# Função principal do jogo
+def jogo_da_forca():
+    palavras = ler_palavras()
+
+    # Escolher palavra aleatória
+    palavra = escolher_palavra(palavras)
+    palavra_oculta = ['_'] * len(palavra)
+    letras_corretas = set()
+    letras_incorretas = set()
+    
+    # Loop principal do jogo
+    while True:
+        # Mostrar estado atual da palavra
+        print("Palavra: " + ' '.join(palavra_oculta))
+        print("Letras erradas: " + ' '.join(letras_incorretas))
+        
+        # Verificar condição de vitória
+        if '_' not in palavra_oculta:
+            print("Parabéns, você ganhou!")
+            salvar_record(dificuldade, nick, tentativas)
+            break
+        
+        # Verificar condição de derrota
+        if tentativas == max_tentativas:
+            print(f"Game Over! A palavra era '{palavra}'.")
+            break
+        
+        # Pedir próxima letra ao jogador
+        letra = input("Digite uma letra: ").lower()
+        
+        if letra in letras_corretas or letra in letras_incorretas:
+            print("Você já tentou esta letra. Tente outra.")
+            continue
+        
+        # Verificar se a letra está na palavra
+        if letra in palavra:
+            print("Letra correta!")
+            letras_corretas.add(letra)
+            # Atualizar a palavra oculta com a letra correta
+            for i in range(len(palavra)):
+                if palavra[i] == letra:
+                    palavra_oculta[i] = letra
+        else:
+            print("Letra incorreta!")
+            letras_incorretas.add(letra)
+            tentativas += 1
