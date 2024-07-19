@@ -4,8 +4,8 @@ from Interface import *
 
 # Função para ler palavras do arquivo
 def ler_palavras():
-    with open('palavras ocultas.txt', 'r', encoding='utf-8') as file:
-        palavras = file.readlines()
+    with open('palavras.txt', 'r', encoding='utf-8') as file:
+        palavras = file.readline()
     return [palavra.strip().lower() for palavra in palavras]
 
 # Função para escolher uma palavra aleatoriamente
@@ -57,4 +57,4 @@ def jogo_da_forca():
         else:
             print("Letra incorreta!")
             letras_incorretas.add(letra)
-            tentativas += 1
+            tentativas = tentativas + 1
