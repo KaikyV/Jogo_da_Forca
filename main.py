@@ -5,12 +5,13 @@ from verificação import *
 def main():
     cabeçario()
     while True:
+        try:
             opcao = int(input("""O'que você deseja?
             Insira 1 para inciar um novo jogo;
             Insira 2 para verificar record gerais;
             Insira 3 para verificar record de um determinado jogador;
             Insira 4 para encerrar o programa.
-                             """))
+                        """))
             if opcao == 1:
                 pedir_nick()
                 dificuldade()
@@ -23,8 +24,9 @@ def main():
                 print('Obrigado por jogar!')
                 #salvar_record(lista_records)
                 break
-            else:
-                print('Opção inválida. Tente novamente.')
+        except Exception as erro:
+            print(f'Infelizmente tivemos um problema! Tente novamente, digitando corretamente na próxima vez!')
+            
 
 # Executar o programa
 if __name__ == "__main__":
