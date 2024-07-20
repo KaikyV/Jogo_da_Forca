@@ -39,20 +39,20 @@ def pedir_nick():
     nick = input('Insira o seu nickname: ')
 
 #Função para exibir o placar.    
-def placar():
-    if dificuldade == 1:
-        print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(tentativas)+" \033[m    \033[1;36m|\033[m ")
-        print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
-        print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
-    elif dificuldade == 2: 
-        print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(tentativas)+" \033[m    \033[1;36m|\033[m ")
-        print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
-        print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
-    elif dificuldade == 3:
-        print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(tentativas)+" \033[m    \033[1;36m|\033[m ")
-        print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
-        print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
-    else:
-        print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(tentativas)+" \033[m    \033[1;36m|\033[m ")
-        print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
-        print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
+#def placar():
+    #if dificuldade == 1:
+        #print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(tentativas)+" \033[m    \033[1;36m|\033[m ")
+        #print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
+        #print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
+    #elif dificuldade == 2: 
+        #print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(tentativas)+" \033[m    \033[1;36m|\033[m ")
+        #print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
+        #print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
+    #elif dificuldade == 3:
+        #print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(tentativas)+" \033[m    \033[1;36m|\033[m ")
+        #print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
+        #print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
+    #else:
+        #print("             \033[1;36m|\033[m \033[32m    TENTATIVAS: "+str(tentativas)+" \033[m    \033[1;36m|\033[m ")
+        #print("             \033[1;36m|\033[m \033[32m Palavras certas: 3\033[m   \033[1;36m|\033[m ")
+        #print("             \033[1;36m|\033[m \033[32m Palavras erradass: 2\033[m \033[1;36m|\033[m ")
