@@ -4,8 +4,8 @@ from Interface import *
 
 # Função para ler palavras do arquivo
 def ler_palavras():
-    with open('palavras.txt', 'r', encoding='utf-8') as file:
-        palavras = file.readline()
+    with open('arquivos/palavras.txt', 'r',) as arquivo_palavras_txt:
+        palavras = arquivo_palavras_txt.readline(arquivo_palavras_txt)
     return [palavra.strip().lower() for palavra in palavras]
 
 # Função para escolher uma palavra aleatoriamente
