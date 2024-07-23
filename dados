@@ -6,8 +6,8 @@ def salvar_record(nick, dificuldade, tentativas):
 # Função para buscar dados de um jogador
 def buscar_dados_jogador():
     nick = input("Digite o nick do jogador: ")
-    with open('arquivos/records.txt', 'r',) as file:
-        records = file.readlines()
+    with open('arquivos/records.txt', 'r',) as arquivo_record_txt:
+        records = arquivo_record_txt.readlines()
     encontrados = []
     for record in records:
         if nick in record:
@@ -21,11 +21,11 @@ def buscar_dados_jogador():
 
 #Função para mostrar todos os records
 def mostrar_records():
-    with open('arquivos/records.txt', 'r',) as file:
-        records = file.readlines()
+    with open('arquivos/records.txt', 'r',) as arquivo_record_txt:
+        records = arquivo_record_txt.readlines()
     if records:
         print("\nRecords:")
-        for record in records:#
+        for record in records:
             print(record.strip())
     else:
         print("Nenhum record encontrado.")
