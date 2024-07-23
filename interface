@@ -10,7 +10,7 @@ def cabeçario():
              |-------------------|\033[m''')
 
 #Função para perguntar a dificuldade.
-def dificuldade1():
+def pedir_dificuldade():
     while True:
         try:
             dificuldade = int(input('''Em que dificuldade você deseja jogar?
