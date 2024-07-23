@@ -13,19 +13,21 @@ def main():
             Insira 4 para encerrar o programa.
                         """))
             if opcao == 1:
-                pedir_nick()
-                dificuldade()
-                jogo_da_forca()
+                global nick
+                nick = pedir_nick()
+                max_tentativas, dificuldade = dificuldade1()
+                jogo_da_forca(max_tentativas, dificuldade)
             elif opcao == 2:
                 mostrar_records()
             elif opcao == 3:
                 buscar_dados_jogador()
             elif opcao == 4:
                 print('Obrigado por jogar!')
-                #salvar_record(lista_records)
                 break
-        except Exception as erro:
-            print(f'Infelizmente tivemos um problema! Tente novamente, digitando corretamente na próxima vez!')
+            else:
+                print('Infelizmente tivemos um problema! Tente novamente, digitando corretamente na próxima vez!')
+        except:
+            print('Infelizmente tivemos um problema! Tente novamente, digitando corretamente na próxima vez!')
             
 
 # Executar o programa
