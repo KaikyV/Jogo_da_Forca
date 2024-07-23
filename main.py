@@ -1,4 +1,4 @@
-from Interface import *
+rfrom Interface import *
 from dados import *
 from verificação import *
 
@@ -15,7 +15,7 @@ def main():
             if opcao == 1:
                 global nick
                 nick = pedir_nick()
-                max_tentativas, dificuldade = dificuldade1()
+                max_tentativas, dificuldade = pedir_dificuldade()
                 jogo_da_forca(max_tentativas, dificuldade)
             elif opcao == 2:
                 mostrar_records()
