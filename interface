@@ -1,7 +1,7 @@
 #Variáveis globais:
 tentativas = 0
 max_tentativas = 0
-nick = 'abc'
+nick = ''
 
 #Função para o cabeçario.
 def cabeçario():
