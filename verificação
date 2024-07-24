@@ -1,60 +1,46 @@
-import random
-from dados import *
-from Interface import *
-
-# Função para ler palavras do arquivo
-def ler_palavras():
-    with open('arquivos/palavras.txt', 'r',) as arquivo_palavras_txt:
-        palavras = arquivo_palavras_txt.readlines()
-    return [palavra.strip().lower() for palavra in palavras]
-
-# Função para escolher uma palavra aleatoriamente
-def escolher_palavra(palavras):
-    return random.choice(palavras)
-
-# Função principal do jogo
-def jogo_da_forca(max_tentativas, dificuldade):
+#Função principal do jogo
+def jogo_da_forca(max_tentativas, dificuldade, nick):
     palavras = ler_palavras()
     tentativas = 0
 
     # Escolher palavra aleatória
     palavra = escolher_palavra(palavras)
-    palavra_oculta = ['_'] * len(palavra)
+    palavra_secreta = ['_'] * len(palavra)
     letras_corretas = set()
     letras_incorretas = set()
     
-    # Loop principal do jogo
+    #Loop principal do jogo
     while True:
-        # Mostrar estado atual da palavra
-        print("Palavra: " + ' '.join(palavra_oculta))
-        print("Letras erradas: " + ' '.join(letras_incorretas))
+        #Mostrar estado atual da palavra
+        print("Palavra: " + ''.join(palavra_secreta))
+        print("Letras erradas: " + ', '.join(letras_incorretas))
         
-        # Verificar condição de vitória
-        if '_' not in palavra_oculta:
+        #Verificar condição de vitória
+        if '_' not in palavra_secreta:
             print("Parabéns, você ganhou!")
             salvar_record(nick, dificuldade, tentativas)
             break
         
-        # Verificar condição de derrota
+        #Verificar condição de derrota
         if tentativas == max_tentativas:
             print(f"Game Over! A palavra era '{palavra}'.")
             break
         
-        # Pedir próxima letra ao jogador
+        #Pedir próxima letra ao jogador
         letra = input("Digite uma letra: ").lower()
         
         if letra in letras_corretas or letra in letras_incorretas:
             print("Você já tentou esta letra. Tente outra.")
             continue
         
-        # Verificar se a letra está na palavra
+        #Verificar se a letra está na palavra
         if letra in palavra:
             print("Letra correta!")
             letras_corretas.add(letra)
-            # Atualizar a palavra oculta com a letra correta
+            #Atualizar a palavra secreta com a letra correta
             for i in range(len(palavra)):
                 if palavra[i] == letra:
-                    palavra_oculta[i] = letra
+                    palavra_secreta[i] = letra
         else:
             print("Letra incorreta!")
             letras_incorretas.add(letra)
