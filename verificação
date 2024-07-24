@@ -1,4 +1,17 @@
-#Função principal do jogo
+from dados import *
+import random
+from Interface import *
+
+# Função para ler palavras do arquivo
+def ler_palavras():
+    with open('arquivos/palavras.txt', 'r',) as arquivo_palavras_txt:
+        palavras = arquivo_palavras_txt.readlines()
+    return [palavra.strip().lower() for palavra in palavras]
+
+# Função para escolher uma palavra aleatoriamente
+def escolher_palavra(palavras):
+    return random.choice(palavras)
+
 def jogo_da_forca(max_tentativas, dificuldade, nick):
     palavras = ler_palavras()
     tentativas = 0
@@ -11,6 +24,7 @@ def jogo_da_forca(max_tentativas, dificuldade, nick):
     
     #Loop principal do jogo
     while True:
+        
         #Mostrar estado atual da palavra
         print("Palavra: " + ''.join(palavra_secreta))
         print("Letras erradas: " + ', '.join(letras_incorretas))
