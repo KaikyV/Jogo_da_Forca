@@ -1,9 +1,9 @@
-# Função para salvar o record no arquivo
+#Função para salvar o record no arquivo
 def salvar_record(nick, dificuldade, tentativas):
     with open('arquivos/records.txt', 'a',) as arquivo_record_txt:
         arquivo_record_txt.write(f"{nick} - {dificuldade} - {tentativas}\n")
 
-# Função para buscar dados de um jogador
+#Função para buscar dados de um jogador
 def buscar_dados_jogador():
     nick = input("Digite o nick do jogador: ")
     with open('arquivos/records.txt', 'r',) as arquivo_record_txt:
@@ -13,7 +13,7 @@ def buscar_dados_jogador():
         if nick in record:
             encontrados.append(record.strip())
     if encontrados:
-        print(f"\nRecords encontrados para '{nick}':")
+        print(f"\nRecords encontrados para '{nick}':")  
         for rec in encontrados:
             print(rec)
     else:
