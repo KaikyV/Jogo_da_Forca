@@ -1,4 +1,4 @@
-rfrom Interface import *
+from Interface import *
 from dados import *
 from verificação import *
 
@@ -13,10 +13,9 @@ def main():
             Insira 4 para encerrar o programa.
                         """))
             if opcao == 1:
-                global nick
                 nick = pedir_nick()
                 max_tentativas, dificuldade = pedir_dificuldade()
-                jogo_da_forca(max_tentativas, dificuldade)
+                jogo_da_forca(max_tentativas, dificuldade, nick)
             elif opcao == 2:
                 mostrar_records()
             elif opcao == 3:
